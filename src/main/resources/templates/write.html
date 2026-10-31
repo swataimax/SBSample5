@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title th:text="登録"></title>
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+	<div th:text="登録" class="title"></div>
+	<form th:action="@{/insert}" th:object="${form}" method="post">
+		<p>
+			日　　付
+			<input type="text" th:field="*{date}" />
+			<span th:if="${#fields.hasErrors('date')}" th:errors="*{date}" class="err"></span>
+		</p>
+		<p>
+			タイトル
+			<input type="text" th:field="*{title}" />
+			<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="err"></span>
+		</p>
+		<p>
+			メ　　モ
+			<textarea th:field="*{memo}" cols="20" rows="5"></textarea>
+			<span th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" class="err"></span>
+		</p>
+		<input type="submit" value="送信" />
+	</form>
+	<p><a th:href="@{/top}">トップへ戻る</a></p>
+</body>
+</html>

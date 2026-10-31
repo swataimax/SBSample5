@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body {
+    font-family: monospace;
+}
+textarea {
+    vertical-align: middle;
+}
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+span.err {
+    color:red;
+}
